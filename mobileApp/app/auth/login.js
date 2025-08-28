@@ -22,6 +22,8 @@ export default function Login() {
         password,
       });
 
+      // changed here
+
       if (response.status === 200) {
         const { token, user } = response.data;
 
