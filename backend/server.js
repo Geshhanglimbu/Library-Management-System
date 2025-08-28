@@ -9,6 +9,9 @@ import { createBorrow, returnBorrow, getUserBorrows } from './controllers/borrow
 import { login } from './controllers/auth.controller.js';
 import { register } from './controllers/register.controller.js';
 import { authorizeToken } from './middleware/auth.middleware.js';
+import statsRoutes from "./routes/stats.js";
+
+
 
 dotenv.config();
 const app = express();
@@ -17,6 +20,7 @@ const PORT = process.env.PORT;
 app.use(cors());
 app.use(express.json());
 app.use(morgan('dev'));
+app.use("/api", statsRoutes);
 
 // Book routes
 app.post("/books", authorizeToken, createBook);
