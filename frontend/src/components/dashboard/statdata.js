@@ -7,25 +7,25 @@ import {
 const stats = [
     {
       title: "Total books",
-      count: 222,
+      count: 3,
       icon: FaUserFriends,
       color: "text-blue-600",
     },
     {
       title: "Available books",
-      count: 200,
+      count: 20,
       icon: FaUserCheck ,
       color: " text-blue-600",
     },
     {
       title: "borrowed books",
-      count: 22,
+      count: 3,
       icon: FaUserMinus,
       color: "text-blue-600",
     },
     {
       title: "Total users",
-      count: 222,
+      count: 2,
       icon: FaFile,
       color: " text-blue-600",
     },

@@ -1,6 +1,6 @@
 import React from 'react';
-import Statcard from '../components/dashboard/statCard';
-import stats from '../components/dashboard/statdata';
+import Statcard from '../components/dashboard/statcard';
+import stats from '../components/dashboard/statdata.js';
 
 export default function Dashboard() {
   return (
