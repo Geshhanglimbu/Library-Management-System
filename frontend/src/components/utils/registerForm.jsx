@@ -25,8 +25,8 @@ export default function Register() {
       return;
     }
     try {
-      await axios.post('http://localhost:10000/register', { email, password, name, role });
-     const res = await axios.post('http://localhost:10000/login', { email, password });
+      await axios.post('https://library-management-system-67n4.onrender.com/register', { email, password, name, role });
+     const res = await axios.post('https://library-management-system-67n4.onrender.com/login', { email, password });
       localStorage.setItem('token', res.data.token);
       localStorage.setItem('user', JSON.stringify(res.data.user));
       alert('Registration successful');

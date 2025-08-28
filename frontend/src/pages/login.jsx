@@ -25,7 +25,7 @@ export default function LoginForm() {
 
     setIsLoading(true);
     try {
-      const response = await axios.post("http://localhost:10000/login", { email, password });
+      const response = await axios.post("https://library-management-system-67n4.onrender.com/login", { email, password });
       console.log("Login response:", JSON.stringify(response.data, null, 2));
 
       if (response.status === 200) {
@@ -53,7 +53,7 @@ export default function LoginForm() {
       return;
     }
     try {
-      const response = await axios.get("http://localhost:10000/verify-token", {
+      const response = await axios.get("https://library-management-system-67n4.onrender.com/verify-token", {
         headers: {
           Authorization: `Bearer ${token}`,
         },

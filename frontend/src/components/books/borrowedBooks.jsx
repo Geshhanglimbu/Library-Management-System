@@ -16,7 +16,7 @@ export default function BorrowedBooks() {
       return;
     }
     try {
-      const res = await axios.get("http://localhost:10000/borrow", {
+      const res = await axios.get("https://library-management-system-67n4.onrender.com/borrow", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setBorrows(Array.isArray(res.data.data) ? res.data.data : []);
@@ -58,7 +58,7 @@ export default function BorrowedBooks() {
     const token = localStorage.getItem("token");
     try {
       await axios.post(
-        "http://localhost:10000/borrow/return",
+        "https://library-management-system-67n4.onrender.com/borrow/return",
         { borrowId },
         { headers: { Authorization: `Bearer ${token}` } }
       );

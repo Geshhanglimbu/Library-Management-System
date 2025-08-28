@@ -16,7 +16,7 @@ export default function Users() {
   const fetchUsers = async () => {
     const token = localStorage.getItem("token");
     try {
-      const res = await axios.get("http://localhost:10000/users", {
+      const res = await axios.get("https://library-management-system-67n4.onrender.com/users", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setUsers(Array.isArray(res.data.data) ? res.data.data : []);
@@ -36,7 +36,7 @@ export default function Users() {
 
     const token = localStorage.getItem("token");
     try {
-      await axios.delete(`http://localhost:10000/users/${id}`, {
+      await axios.delete(`https://library-management-system-67n4.onrender.com/users/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setUsers((prev) => prev.filter((user) => user._id !== id));

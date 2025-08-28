@@ -34,7 +34,7 @@ export default function UserForm({ setUsers, setModalForm, editUser, setEditUser
     const token = localStorage.getItem('token');
     try {
       if (editUser) {
-        const response = await axios.put(`http://localhost:10000/users/${editUser._id}`, userData, {
+        const response = await axios.put(`https://library-management-system-67n4.onrender.com/users/${editUser._id}`, userData, {
           headers: { Authorization: `Bearer ${token}` },
         });
         setUsers((prev) =>
@@ -43,7 +43,7 @@ export default function UserForm({ setUsers, setModalForm, editUser, setEditUser
         alert('User updated successfully');
         setEditUser(null);
       } else {
-        const response = await axios.post('http://localhost:10000/users', userData, {
+        const response = await axios.post('https://library-management-system-67n4.onrender.com/users', userData, {
           headers: { Authorization: `Bearer ${token}` },
         });
         setUsers((prev) => [...prev, response.data.data]);

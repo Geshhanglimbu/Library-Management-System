@@ -13,7 +13,7 @@ export default function BooksPage({ userRole }) {
   // Fetch all books on mount
 useEffect(() => {
   const token = localStorage.getItem('token');
-  axios.get('http://localhost:10000/books', { headers: { Authorization: `Bearer ${token}` } })
+  axios.get('https://library-management-system-67n4.onrender.com/books', { headers: { Authorization: `Bearer ${token}` } })
     .then(res => {
       console.log("Fetched books array:", res.data.data);
       console.log("Is array?", Array.isArray(res.data.data));
@@ -26,7 +26,7 @@ useEffect(() => {
   const handleDelete = async (id) => {
     const token = localStorage.getItem('token');
     try {
-      await axios.delete(`http://localhost:10000/books/${id}`, { headers: { Authorization: `Bearer ${token}` } });
+      await axios.delete(`https://library-management-system-67n4.onrender.com/books/${id}`, { headers: { Authorization: `Bearer ${token}` } });
       setBooks(books.filter(book => book._id !== id));
     } catch (err) {
       console.error(err);

@@ -29,7 +29,7 @@ export default function Profile() {
       return;
     }
     try {
-      const res = await axios.put(`http://localhost:10000/users/${user.id}`, { name, email }, {
+      const res = await axios.put(`https://library-management-system-67n4.onrender.com/users/${user.id}`, { name, email }, {
         headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
       });
       login(res.data.user, localStorage.getItem('token'));
