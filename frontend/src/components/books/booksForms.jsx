@@ -59,7 +59,8 @@ export default function BookForm({ setBooks, setModalForm, editBook, setEditBook
       setAvailable('');
       setError('');
     } catch (err) {
-      setError(err.response?.data.message || 'Failed to save book');
+       console.error("Book save error:", err.response || err);
+  setError(err.response?.data?.message || 'Failed to save book');
     }
   };
 
