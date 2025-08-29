@@ -8,7 +8,7 @@ export default function Stats() {
   useEffect(() => {
     const fetchStats = async () => {
       try {
-        const res = await axios.get("https://library-management-system-67n4.onrender.com/api/stats"); // ✅ removed extra space
+        const res = await axios.get("https://library-management-system-67n4.onrender.com/api/stats");
         const data = res.data;
 
         setStats([
@@ -43,7 +43,7 @@ export default function Stats() {
     };
 
     fetchStats();
-  }, []); // ✅ dependency array
+  }, []); 
 
   return (
     <div className="grid grid-cols-2 gap-4">
