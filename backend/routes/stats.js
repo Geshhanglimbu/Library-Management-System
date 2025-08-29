@@ -4,25 +4,34 @@ import userModel from "../models/user.model.js";
 
 const router = express.Router();
 
-// get actual models by calling the functions
-const Book = bookModel();
-const User = userModel();
-
-router.get("/stats", async (req, res) => {
+router.get("/", async (req, res) => {
   try {
-    const totalBooks = await Book.countDocuments();
-    const availableBooks = await Book.countDocuments({ status: "available" });
-    const borrowedBooks = await Book.countDocuments({ status: "borrowed" });
-    const totalUsers = await User.countDocuments();
+    // Ensure books exist
+    const totalBooks = await bookModel.countDocuments();
+    const availableBooks = await bookModel.countDocuments({ status: "available" });
+    const borrowedBooks = await bookModel.countDocuments({ status: "borrowed" });
 
+    // Ensure users exist
+    const totalUsers = await userModel.countDocuments();
+
+    // Send safe defaults if counts are NaN or undefined
     res.json({
-      totalBooks,
-      availableBooks,
-      borrowedBooks,
-      totalUsers,
+      totalBooks: totalBooks || 0,
+      availableBooks: availableBooks || 0,
+      borrowedBooks: borrowedBooks || 0,
+      totalUsers: totalUsers || 0,
     });
   } catch (err) {
-    res.status(500).json({ error: err.message });
+    console.error("Stats fetch error:", err);
+
+    // Return safe default stats instead of crashing
+    res.status(500).json({
+      totalBooks: 0,
+      availableBooks: 0,
+      borrowedBooks: 0,
+      totalUsers: 0,
+      error: "Failed to fetch stats",
+    });
   }
 });
 
