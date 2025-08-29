@@ -20,7 +20,7 @@ const PORT = process.env.PORT;
 app.use(cors());
 app.use(express.json());
 app.use(morgan('dev'));
-app.use("/api", statsRoutes);
+app.use('/api/stats', statsRoutes);
 
 // Book routes
 app.post("/books", authorizeToken, createBook);
