@@ -27,11 +27,7 @@ const bookSchema = new mongoose.Schema({
     required: true,
     min: 0,
   },
-  status: {
-    type: String,
-    enum: ["available", "borrowed"],
-    default: "available", // new books are available by default
-  },
+
 }, { timestamps: true });
 
 const bookModel = mongoose.model("Book", bookSchema);
