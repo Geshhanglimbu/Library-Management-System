@@ -1,6 +1,6 @@
 import { FaSearch } from 'react-icons/fa';
 
-export default function SearchBooks({ search, setSearch }) {
+export default function SearchUsers({ search, setSearch }) {
   return (
     <div style={{ padding: '4px', backgroundColor: '#fff', marginTop: '12px' }}>
       <div style={{ display: 'flex', alignItems: 'center', border: '1px solid #ccc', borderRadius: '4px', padding: '8px', backgroundColor: '#f9f9f9' }}>
