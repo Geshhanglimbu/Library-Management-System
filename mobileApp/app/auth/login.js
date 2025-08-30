@@ -17,7 +17,7 @@ export default function Login() {
     }
 
     try {
-      const response = await axios.post("http://localhost:10000/login", {
+      const response = await axios.post("https://library-management-system-67n4.onrender.com/login", {
         email,
         password,
       });
