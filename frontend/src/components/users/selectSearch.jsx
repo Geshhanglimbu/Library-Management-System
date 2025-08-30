@@ -7,7 +7,7 @@ export default function SearchBooks({ search, setSearch }) {
         <FaSearch style={{ color: '#666', marginRight: '8px' }} />
         <input
           type="text"
-          placeholder="Search books by title or author..."
+          placeholder="Search user by name or Id..."
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           style={{ width: '100%', background: 'transparent', outline: 'none', fontSize: '0.875rem' }}
